@@ -1,0 +1,9 @@
+admin/*.tar
+server/*.tar
+dashboard/dist
+.DS_Store
+dashboard/__MACOSX/
+docker-compose.yml
+server/cas.properties
+admin/application.properties
+nginx/conf.d/
