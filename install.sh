@@ -17,7 +17,7 @@ rm -rf mysql
 mkdir admin
 mkdir server
 mkdir mysql
-mkdir mysql/conf.d
+mkdir mysql/conf
 mkdir nginx/conf.d
 
 AUTHSAUR_IP=`sed '/^AUTHSAUR_IP=/!d;s/.*=//' .env`
@@ -46,6 +46,6 @@ else
     cp template/server_ssl.conf nginx/conf.d/server_ssl.conf
 fi
 
-cp template/my.cnf mysql/conf.d/my.cnf
+cp template/my.cnf mysql/conf/my.cnf
 
 unzip dashboard/dist.zip -d dashboard

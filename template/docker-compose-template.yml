@@ -11,7 +11,7 @@ services:
     volumes:
       - ${CURRENT}/mysql/log:/var/log/mysql
       - ${CURRENT}/mysql/data:/var/lib/mysql
-      - ${CURRENT}/mysql/conf:/etc/mysql/conf.d
+      - ${CURRENT}/mysql/conf/my.cnf:/etc/my.cnf
       - ${CURRENT}/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
     command:
       --character-set-server=utf8mb4

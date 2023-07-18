@@ -7,5 +7,5 @@ server/cas.properties
 admin/application.properties
 nginx/conf.d/
 docker-compose.yml
-mysql/conf.d/my.cnf
+mysql/conf/my.cnf
 mysql/init.sql
