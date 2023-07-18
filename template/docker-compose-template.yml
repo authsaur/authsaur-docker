@@ -20,8 +20,6 @@ services:
       --explicit_defaults_for_timestamp=true
       --skip-character-set-client-handshake
       --init-file=/docker-entrypoint-initdb.d/init.sql
-    ports:
-      - 3336:3306
 
   redis:
     image: redis:5.0.3
@@ -31,8 +29,6 @@ services:
       - ${CURRENT}/redis/data:/data
       - ${CURRENT}/redis/logs:/logs
     command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}
-    ports:
-        - ${REDIS_PORT}:6379
 
   admin:
     image: deepoove/authsaur-admin-api:1.0.0-beta

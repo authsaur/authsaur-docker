@@ -11,15 +11,15 @@ authsaur除了公开提供其源代码之外，还提供开箱即用地安装，
 - 4 GB RAM
 
 ## 端口
-### 外部端口
+### 外部端口(防火墙开放)
 - 80、443：authsaur
 - 8000：authsaur dashboard
 
 ### 内置端口
 - 8080、8443：authsaur server
 - 8787：authsaur admin api
-- 3336：mysql
-- 6579：redis
+- 3306：mysql
+- 6379：redis
 
 ## 安装
 我们的建议总是下载最新版本的代码仓库：
