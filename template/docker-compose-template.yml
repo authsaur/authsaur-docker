@@ -33,31 +33,24 @@ services:
   admin:
     image: deepoove/authsaur-admin-api:1.0.0-beta
     container_name: authsaur-admin-api
-    ports:
-      - "8787:8787"
+    network_mode: host
     volumes:
       - ${CURRENT}/admin/application.properties:/app/resources/application.properties
     # entrypoint: java -Xmx2g -cp @/app/jib-classpath-file com.deepoove.authsaur.AuthsaurAdminApiApplication
     depends_on:
       - db
       - redis
-    networks:
-      - authsaur-net
 
   server:
     image: deepoove/authsaur:1.0.0-beta
     container_name: authsaur-server
-    ports:
-      - "8443:8443"
-      - "8080:8080"
+    network_mode: host
     volumes:
       - ${CURRENT}/server/cas.properties:/etc/cas/config/cas.properties
     # entrypoint: java -server -noverify -Xmx2048M -XX:+HeapDumpOnOutOfMemoryError -jar cas.war
     depends_on:
       - db
       - redis
-    networks:
-      - authsaur-net
 
   nginx:
     image: nginx:1.18.0
@@ -72,6 +65,3 @@ services:
       - ${CURRENT}/nginx/conf.d:/etc/nginx/conf.d
       - ${CURRENT}/nginx/html:/usr/share/nginx/html
       - ${CURRENT}/dashboard:/opt/authsaur/dashboard
-
-networks:
-  authsaur-net:
