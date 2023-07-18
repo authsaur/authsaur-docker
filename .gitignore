@@ -3,7 +3,9 @@ server/*.tar
 dashboard/dist
 .DS_Store
 dashboard/__MACOSX/
-docker-compose.yml
 server/cas.properties
 admin/application.properties
 nginx/conf.d/
+docker-compose.yml
+mysql/conf.d/my.cnf
+mysql/init.sql

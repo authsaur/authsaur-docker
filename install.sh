@@ -33,7 +33,7 @@ echo $CURRENT
 echo $AUTHSAUR_SERVER
 echo $AUTHSAUR_ADMIN
 
-sed -e 's!${CURRENT}!'"${CURRENT}"'!g' -e 's/${DB_PASSWORD}/'"${DB_PASSWORD}"'/g' -e 's/${DB_NAME}/'"${DB_NAME}"'/g' -e 's/${REDIS_PORT}/'"${REDIS_PORT}"'/g' -e 's/${REDIS_PASSWORD}/'"${REDIS_PASSWORD}"'/g' template/docker-compose.yml > docker-compose.yml
+sed -e 's!${CURRENT}!'"${CURRENT}"'!g' -e 's/${DB_PASSWORD}/'"${DB_PASSWORD}"'/g' -e 's/${DB_NAME}/'"${DB_NAME}"'/g' -e 's/${REDIS_PORT}/'"${REDIS_PORT}"'/g' -e 's/${REDIS_PASSWORD}/'"${REDIS_PASSWORD}"'/g' template/docker-compose-template.yml > docker-compose.yml
 sed -e 's!${AUTHSAUR_SERVER}!'"${AUTHSAUR_SERVER}"'!g' -e 's/${AUTHSAUR_IP}/'"${AUTHSAUR_IP}"'/g' -e 's/${DB_PASSWORD}/'"${DB_PASSWORD}"'/g' -e 's/${DB_NAME}/'"${DB_NAME}"'/g' -e 's/${REDIS_PORT}/'"${REDIS_PORT}"'/g' -e 's/${REDIS_PASSWORD}/'"${REDIS_PASSWORD}"'/g' template/application.properties > admin/application.properties
 sed -e 's!${AUTHSAUR_SERVER}!'"${AUTHSAUR_SERVER}"'!g' -e 's/${AUTHSAUR_IP}/'"${AUTHSAUR_IP}"'/g' -e 's/${DB_PASSWORD}/'"${DB_PASSWORD}"'/g' -e 's/${DB_NAME}/'"${DB_NAME}"'/g' -e 's/${REDIS_PORT}/'"${REDIS_PORT}"'/g' -e 's/${REDIS_PASSWORD}/'"${REDIS_PASSWORD}"'/g' template/cas.properties > server/cas.properties
 cp template/authsaur.conf nginx/conf.d/authsaur.conf
