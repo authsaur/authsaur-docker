@@ -48,4 +48,4 @@ fi
 
 cp template/my.cnf mysql/conf/my.cnf
 
-unzip dashboard/dist.zip -d dashboard
+unzip dashboard/dist.zip -d dashboard > /dev/null
