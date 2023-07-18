@@ -35,7 +35,7 @@ AUTHSAUR_IP=127.0.0.1
 SSL=http
 ```
 
-在此目录中运行`sh install.sh`进行安装，该脚本将处理您开始所需的所有事情。
+在此目录中运行`sudo sh install.sh`进行安装，该脚本将处理您开始所需的所有事情。
 
 最后运行`docker-compose up -d`启动authsaur。您应该能够访问 http://127.0.0.1:8000 进入管理后台页面，访问 http://127.0.0.1 进入单点登录页面。
 
