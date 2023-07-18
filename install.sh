@@ -29,9 +29,9 @@ SSL=`sed '/^SSL=/!d;s/.*=//' .env`
 AUTHSAUR_SERVER=$SSL://$AUTHSAUR_IP
 AUTHSAUR_ADMIN=http://$AUTHSAUR_IP
 CURRENT=`pwd`
-echo $CURRENT
-echo $AUTHSAUR_SERVER
-echo $AUTHSAUR_ADMIN
+echo Installed：$CURRENT
+echo Authsaur：$AUTHSAUR_SERVER
+echo Console：$AUTHSAUR_ADMIN":8000"
 
 sed -e 's!${CURRENT}!'"${CURRENT}"'!g' -e 's/${DB_PASSWORD}/'"${DB_PASSWORD}"'/g' -e 's/${DB_NAME}/'"${DB_NAME}"'/g' -e 's/${REDIS_PORT}/'"${REDIS_PORT}"'/g' -e 's/${REDIS_PASSWORD}/'"${REDIS_PASSWORD}"'/g' template/docker-compose-template.yml > docker-compose.yml
 sed -e 's!${AUTHSAUR_SERVER}!'"${AUTHSAUR_SERVER}"'!g' -e 's/${AUTHSAUR_IP}/'"${AUTHSAUR_IP}"'/g' -e 's/${DB_PASSWORD}/'"${DB_PASSWORD}"'/g' -e 's/${DB_NAME}/'"${DB_NAME}"'/g' -e 's/${REDIS_PORT}/'"${REDIS_PORT}"'/g' -e 's/${REDIS_PASSWORD}/'"${REDIS_PASSWORD}"'/g' template/application.properties > admin/application.properties
