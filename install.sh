@@ -21,13 +21,14 @@ mkdir mysql/conf
 mkdir nginx/conf.d
 
 AUTHSAUR_IP=`sed '/^AUTHSAUR_IP=/!d;s/.*=//' .env`
+CONSOLE_IP=`sed '/^CONSOLE_IP=/!d;s/.*=//' .env`
 DB_PASSWORD=`sed '/^DB_PASSWORD=/!d;s/.*=//' .env`
 DB_NAME=`sed '/^DB_NAME=/!d;s/.*=//' .env`
 REDIS_PORT=`sed '/^REDIS_PORT=/!d;s/.*=//' .env`
 REDIS_PASSWORD=`sed '/^REDIS_PASSWORD=/!d;s/.*=//' .env`
 SSL=`sed '/^SSL=/!d;s/.*=//' .env`
 AUTHSAUR_SERVER=$SSL://$AUTHSAUR_IP
-AUTHSAUR_ADMIN=http://$AUTHSAUR_IP
+AUTHSAUR_ADMIN=http://$CONSOLE_IP
 CURRENT=`pwd`
 echo Installed：$CURRENT
 echo Authsaur：$AUTHSAUR_SERVER
